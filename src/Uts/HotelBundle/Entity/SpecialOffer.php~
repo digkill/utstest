@@ -1,0 +1,68 @@
+<?php
+
+namespace Uts\HotelBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * SpecialOffer
+ *
+ * @ORM\Table(name="special_offer")
+ * @ORM\Entity
+ */
+class SpecialOffer
+{
+    const DISCOUNT_TYPE_ABSOLUTE = 'a';
+    const DISCOUNT_TYPE_MULTIPLIER = 'm';
+
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @var integer
+     */
+    protected $id;
+
+    /**
+     * @ORM\Column(length=150,nullable=true)
+     * @var string
+     */
+    protected $name;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Hotel"),
+     * @var Hotel
+     */
+    protected $hotel;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="City")
+     * @var City
+     */
+    protected $city;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Country")
+     * @var Country
+     */
+    protected $country;
+
+    /**
+     * @ORM\Column(type="boolean")
+     * @var bool
+     */
+    protected $isActive = true;
+
+
+    /**
+     * @ORM\Column(length=1)
+     * @var string
+     */
+    protected $discountType = self::DISCOUNT_TYPE_MULTIPLIER;
+
+    /**
+     * @ORM\Column(type="integer")
+     * @var integer
+     */
+    protected $discountValue = 0;
+}

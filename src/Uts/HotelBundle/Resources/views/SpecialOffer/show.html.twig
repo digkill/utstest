@@ -1,0 +1,46 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Специальное предложение</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Название</th>
+                <td>{{ entity.name }}</td>
+            </tr>
+            <tr>
+                <th>Активно?</th>
+                <td>{% if entity.isActive %}Да{% else %}Нет{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Скидка</th>
+                <td>
+                    {% if entity.discountType == 'm' %}
+                        {{ entity.discountValue }} %
+                    {% else %}
+                        {{ entity.discountValue }} руб
+                    {% endif %}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('specialoffer') }}">
+            Вернуться к списку
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('specialoffer_edit', { 'id': entity.id }) }}">
+            Изменить
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

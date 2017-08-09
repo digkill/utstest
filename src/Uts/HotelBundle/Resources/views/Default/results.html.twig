@@ -1,0 +1,69 @@
+{% extends 'UtsHotelBundle:Default:index.html.twig' %}
+
+{% block body %}
+    <div class="jumbotron">
+        <h1>Поиск отелей</h1>
+        {{ form(searchForm) }}
+    </div>
+    <div class="row">
+        <div class="col-lg-12"><h1>{{ request.city.name }} {{ request.checkIn|date('d.m.Y') }} - {{ request.checkOut|date('d.m.Y') }}</h1></div>
+    </div>
+    {% if request.error %}
+        <div class="row">
+            <div class="col-lg-12 alert alert-danger">
+                Поиск завершился ошибкой, попробуйте повторить или изменить параметры
+            </div>
+        </div>
+    {% elseif request.new %}
+        <div class="row">
+            <div class="col-lg-12 alert alert-warning">
+                Поиск ещё не был завершен. Повторите попытку позже.
+            </div>
+        </div>
+    {% else %}
+        {# total items count #}
+        <div class="row">
+            <div class="col-lg-12 text-muted">
+                Найдено отелей: {{ pagination.items|first.hotelsCount }}
+            </div>
+        </div>
+        <div class="center-block">
+            {% include '@KnpPaginator/Pagination/twitter_bootstrap_v3_pagination.html.twig' with pagination %}
+        </div>
+        {# table body #}
+        {% set hotelId = 0 %}
+        {% set hotelNumber = 0 %}
+        {% for item in pagination.items %}
+            {% if hotelId != item.hotelId %}
+                {% set hotelId = item.hotelId %}
+                <div class="row bg-info">
+                    {% set hotelNumber = hotelNumber + 1 %}
+                    <div class="col-lg-1">{{ hotelNumber }}</div>
+                    <div class="col-lg-6">
+                        <span class="text-capitalize">{{ item.hotelName }}</span>
+                    </div>
+                    <div class="col-lg-2">от {{ item.minPrice }} {{ item.currency }}</div>
+                </div>
+            {% endif %}
+
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-6">
+                    <span class="text-primary">{{ item.roomName }}</span>
+                    {% if(item.mealName) %}
+                        <span class="text-muted">({{ item.mealName }})</span>
+                    {% endif %}
+                </div>
+                <div class="col-lg-5"><strike class="text-muted">{{ item.price }} {{ item.currency }}</strike>
+                    <span class="text-danger">
+                       {{ item.discountedPrice|number_format(2, '.', '') }} {{ item.currency }}
+                    </span>
+                </div>
+            </div>
+        {% endfor %}
+        {# display navigation #}
+        <div class="center-block">
+            {% include '@KnpPaginator/Pagination/twitter_bootstrap_v3_pagination.html.twig' with pagination %}
+        </div>
+    {% endif %}
+{% endblock %}

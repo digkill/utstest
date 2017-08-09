@@ -1,0 +1,12 @@
+uts_hotel_homepage:
+    path:     /
+    defaults: { _controller: UtsHotelBundle:Default:index }
+uts_hotel_search_process:
+    path:     /process
+    defaults: { _controller: UtsHotelBundle:Default:process }
+uts_hotel_search_results:
+    path:     /results/{searchId}/{page}
+    defaults: { _controller: UtsHotelBundle:Default:results, page: 1 }
+uts_hotel_specialoffer:
+    resource: "@UtsHotelBundle/Resources/config/routing/specialoffer.yml"
+    prefix:   /specialoffer

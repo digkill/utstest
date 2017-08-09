@@ -1,0 +1,9 @@
+services:
+    uts_hotel.searcher:
+        class: Uts\HotelBundle\Service\HotelSearcher
+        arguments: [@doctrine.orm.entity_manager, "%uts_api_wsdl%"]
+    uts_hotel.form.type.search_request:
+        class: Uts\HotelBundle\Form\Type\SearchRequestType
+        arguments: [@doctrine.orm.entity_manager]
+        tags:
+            - { name: form.type, alias: 'uts_hotel_search_request' }

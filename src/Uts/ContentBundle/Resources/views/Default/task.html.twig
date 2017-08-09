@@ -1,0 +1,239 @@
+{% extends 'base.html.twig' %}
+
+{% block task_active %}class="active"{% endblock %}
+
+{% block body %}
+    <h1>Практические задания</h1>
+    <div class="row">
+        <div class="col-lg-12">
+            <h2>1. Группировка по отелям</h2>
+            <h3>Вводные данные</h3>
+            <p>
+                Сейчас вывод результатов поиска отелей выглядит так:
+            </p>
+            <div class="row">
+                <div class="col-lg-1">1</div>
+                <div class="col-lg-6">
+                    <span class="text-capitalize">ADAGIO</span>
+                    <span class="text-primary">Standard Single</span>
+                    <span class="text-muted">(Завтрак)</span>
+                </div>
+                <div class="col-lg-2">71.50 USD</div>
+            </div>
+            <div class="row">
+                <div class="col-lg-1">2</div>
+                <div class="col-lg-6">
+                    <span class="text-capitalize">ADAGIO</span>
+                    <span class="text-primary">Standard Twin</span>
+                    <span class="text-muted">(Завтрак)</span>
+                </div>
+                <div class="col-lg-2">86.50 USD</div>
+            </div>
+            <div class="row">
+                <div class="col-lg-1">3</div>
+                <div class="col-lg-6">
+                    <span class="text-capitalize">ADAGIO</span>
+                    <span class="text-primary">Standard Triple</span>
+                    <span class="text-muted">(Завтрак)</span>
+                </div>
+                <div class="col-lg-2">112.00 USD</div>
+            </div>
+            <div class="row">
+                <div class="col-lg-1">4</div>
+                <div class="col-lg-6">
+                    <span class="text-capitalize">ADAGIO</span>
+                    <span class="text-primary">Standard Quad</span>
+                    <span class="text-muted">(Завтрак)</span>
+                </div>
+                <div class="col-lg-2">141.50 USD</div>
+            </div>
+            <div class="row">
+                <div class="col-lg-1">5</div>
+                <div class="col-lg-6">
+                    <span class="text-capitalize">Catalonia Portal De L&#039;Angel</span>
+                    <span class="text-primary">Standard Single</span>
+                    <span class="text-muted">(Завтрак)</span>
+                </div>
+                <div class="col-lg-2">44.00 USD</div>
+            </div>
+            <div class="row">
+                <div class="col-lg-1">6</div>
+                <div class="col-lg-6">
+                    <span class="text-capitalize">Catalonia Portal De L&#039;Angel</span>
+                    <span class="text-primary">Standard Twin</span>
+                    <span class="text-muted">(Завтрак)</span>
+                </div>
+                <div class="col-lg-2">69.00 USD</div>
+            </div>
+            <div class="row">
+                <div class="col-lg-1">7</div>
+                <div class="col-lg-6">
+                    <span class="text-capitalize">Catalonia Portal De L&#039;Angel</span>
+                    <span class="text-primary">Standard Triple</span>
+                    <span class="text-muted">(Завтрак)</span>
+                </div>
+                <div class="col-lg-2">94.50 USD</div>
+            </div><br/>
+            <h3>Задача</h3>
+            <p>
+                Нужно добиться того, чтобы предложения были сгруппированы по отелю
+            </p>
+            <div class="row bg-info">
+                <div class="col-lg-1">1</div>
+                <div class="col-lg-6">
+                    <span class="text-capitalize">Catalonia Portal De L&#039;Angel</span>
+                </div>
+                <div class="col-lg-2">от 44.00 USD</div>
+            </div>
+            <div class="row">
+                <div class="col-lg-1">&nbsp;</div>
+                <div class="col-lg-6">
+                    <span class="text-primary">Standard Single</span>
+                    <span class="text-muted">(Завтрак)</span>
+                </div>
+                <div class="col-lg-2">44.00 USD</div>
+            </div>
+            <div class="row">
+                <div class="col-lg-1">&nbsp;</div>
+                <div class="col-lg-6">
+                    <span class="text-primary">Standard Twin</span>
+                    <span class="text-muted">(Завтрак)</span>
+                </div>
+                <div class="col-lg-2">69.00 USD</div>
+            </div>
+            <div class="row">
+                <div class="col-lg-1">&nbsp;</div>
+                <div class="col-lg-6">
+                    <span class="text-primary">Standard Triple</span>
+                    <span class="text-muted">(Завтрак)</span>
+                </div>
+                <div class="col-lg-2">94.50 USD</div>
+            </div>
+            <div class="row bg-info">
+                <div class="col-lg-1">2</div>
+                <div class="col-lg-6">
+                    <span class="text-capitalize">ADAGIO</span>
+                </div>
+                <div class="col-lg-2">от 71.50 USD</div>
+            </div>
+            <div class="row">
+                <div class="col-lg-1">&nbsp;</div>
+                <div class="col-lg-6">
+                    <span class="text-primary">Standard Single</span>
+                    <span class="text-muted">(Завтрак)</span>
+                </div>
+                <div class="col-lg-2">71.50 USD</div>
+            </div>
+            <div class="row">
+                <div class="col-lg-1">&nbsp;</div>
+                <div class="col-lg-6">
+                    <span class="text-primary">Standard Twin</span>
+                    <span class="text-muted">(Завтрак)</span>
+                </div>
+                <div class="col-lg-2">86.50 USD</div>
+            </div>
+            <div class="row">
+                <div class="col-lg-1">&nbsp;</div>
+                <div class="col-lg-6">
+                    <span class="text-primary">Standard Triple</span>
+                    <span class="text-muted">(Завтрак)</span>
+                </div>
+                <div class="col-lg-2">112.00 USD</div>
+            </div>
+            <div class="row">
+                <div class="col-lg-1">&nbsp;</div>
+                <div class="col-lg-6">
+                    <span class="text-primary">Standard Quad</span>
+                    <span class="text-muted">(Завтрак)</span>
+                </div>
+                <div class="col-lg-2">141.50 USD</div>
+            </div><br/>
+            <p>
+                Дополнительно. Отели должны выводится в порядке минимальной стоимости проживания.
+                А так же фраза <span class="text-muted">Всего предложений: XXXX</span> должна измениться
+                на <span class="text-muted">Найдено отелей: XXX</span> и отражать количество найденных
+                отелей, а не номеров в них.
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <h2>2. Специальные предложения</h2>
+            <h3>Вводные данные</h3>
+            <p>
+                На странице <a href="{{ path('specialoffer') }}" target="_blank">Специальные предложения</a> вы можете
+                увидеть список "Акций", по условиям которых мы хотим предоставить скидку нашим клиентам.
+            </p>
+            <p>
+                Условия просты, у каждого спецпредложения могут быть указаны:
+            </p>
+            <ul>
+                <li>Только страна - предложение действует для всех отелей в этой стране</li>
+                <li>Страна и город - предложение действует для всех отелей в этом городе</li>
+                <li>Страна, город и отель - предложение действует только для этого отеля</li>
+            </ul>
+            <p>
+                А так же, тип скидки:
+            </p>
+            <ul>
+                <li>Процент - расчитывается от полной стоимости номера</li>
+                <li>Рубли - фиксированная сумма в отечественной валюте</li>
+            </ul>
+            <p>
+                Размер скидки и признак активности данного спецпредложения.
+            </p>
+            <p>
+                В настоящее время эти "Акции" ни как не используются.
+            </p>
+            <h3>Задача</h3>
+            <p>
+                Вам необходимо организовать проверку возможности применения спецпредложения к результату
+                поиска. Если по совпадению страны, города или отеля, применить специальное предложение
+                возможно, то добавить информацию о специальном предложении и размере скидки в результат
+                поиска и его вывод на страницу результатов (требований к дизайну для вывода этой информации нет).
+            </p>
+            <p>
+                При подборе специального предложения, в случае возможности применения нескольких предложений
+                к одному результату поиска, нужно учитывать следующий приоритет:
+            </p>
+            <ul>
+                <li>Предложение с указанием конкретного отеля важнее предложений с указанием только города или страны</li>
+                <li>Предложение без отеля, но с городом, важнее предложения для всей страны без указания города</li>
+                <li>Если два предложения имеют одинаковый приоритет, нужно выбрать то из них, которое предоставит наибольшую скидку</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <h2>3. Кэширование результатов</h2>
+            <h3>Вводные данные</h3>
+            <p>
+                Сейчас, если после завершения поиска, не меняя ни каких параметров, инициировать новый поиск, то
+                он будет выполнен в полном объеме (длительный по времени запрос к внешнему источнику, формирование
+                и сохранение достаточно большого количества результатов). Это не хорошо, через секунду, минуту и
+                даже 10 минут, в результатах ничего значительно не изменится и нет необходимости излишне нагружать
+                наш сервер.
+            </p>
+            <h3>Задача</h3>
+            <p>
+                На самом деле, это не совсем кэширование - это повторное использование результатов поиска. После получения
+                данных поисковой формы, необходимо с учетом всех параметров (город, даты заезда и выезда, количество гостей)
+                проверить не выполняли ли мы уже точно такой же поиск. Если выполняли, то пользователя нужно перенаправить
+                на страницу с существующими результатами.
+            </p>
+            <p>
+                При поиске выполненного раннее запроса нужно учитывать его статус. Запрос UtsHotelBundle:SearchRequest может
+                находится в 4-х состояниях:
+            </p>
+            <ul>
+                <li>Новый</li>
+                <li>Завершен</li>
+                <li>Устарел</li>
+                <li>Ошибка</li>
+            </ul>
+            <p>
+                Только запрос со статусом Завершен пригоден для повторного использования.
+            </p>
+        </div>
+    </div>
+{% endblock %}

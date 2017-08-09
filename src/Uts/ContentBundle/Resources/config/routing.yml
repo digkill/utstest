@@ -1,0 +1,9 @@
+uts_content_homepage:
+    path:     /
+    defaults: { _controller: UtsContentBundle:Default:index }
+uts_content_prepare:
+    path:     /instruction
+    defaults: { _controller: UtsContentBundle:Default:prepare }
+uts_content_task:
+    path:     /task
+    defaults: { _controller: UtsContentBundle:Default:task }

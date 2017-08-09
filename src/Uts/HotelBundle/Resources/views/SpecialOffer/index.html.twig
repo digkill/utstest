@@ -1,0 +1,37 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Специальные предложения</h1>
+    <div class="panel panel-heading">
+        <div class="col-lg-1">Id</div>
+        <div class="col-lg-6">Название</div>
+        <div class="col-lg-2">Скидка</div>
+        <div class="col-lg-1">Активно</div>
+    </div>
+    {% for entity in entities %}
+        <div class="row">
+            <div class="col-lg-1"><a href="{{ path('specialoffer_show', { 'id': entity.id }) }}">{{ entity.id }}</a></div>
+            <div class="col-lg-6">{{ entity.name }}</div>
+            <div class="col-lg-2">
+                {% if entity.discountType == 'm' %}
+                    {{ entity.discountValue }} %
+                {% else %}
+                    {{ entity.discountValue }} руб
+                {% endif %}
+            </div>
+            <div class="col-lg-1">{% if entity.isActive %}Да{% else %}Нет{% endif %}</div>
+            <div class="col-lg-1"><a href="{{ path('specialoffer_edit', { 'id': entity.id }) }}">edit</a></div>
+        </div>
+    {% endfor %}
+    <hr/>
+    <div class="row">
+        <ul>
+            <li>
+                <a href="{{ path('specialoffer_new') }}">
+                    Добавить предложение
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    {% endblock %}

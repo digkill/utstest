@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block homepage_active %}class="active"{% endblock %}
+
+{% block body %}
+    <div class="jumbotron">
+        <h1>Желаем удачи!</h1>
+        <p>
+            Этот небольшой проект специально подготовлен для обеспечения удобства в процессе выполнения тестового задания
+            и контроля результата.
+        </p>
+        <p>
+            <a class="btn btn-primary btn-lg" href="{{ path('uts_content_prepare') }}">Приступить</a>
+        </p>
+    </div>
+    <div class="row">
+        <div class="col-lg-4">
+            <h2>Как делать?</h2>
+            <p>
+                Ознакомьтесь с тем как подготовить среду для разработки и тестирования. Узнайте каковы требования
+                к срокам выполнения заданий и в каком виде нужно предоставить результат на проверку.
+            </p>
+            <p>
+                <a class="btn btn-primary btn-mimi" href="{{ path('uts_content_prepare') }}">Читать >></a>
+            </p>
+        </div>
+        <div class="col-lg-4">
+            <h2>Что делать?</h2>
+            <p>
+                На этой странице подробно изложены условия задач, которые Вам необходимо будет решить.
+                Читайте внимательно - внимательность одно из важных условий прохождения теста.
+            </p>
+            <p>
+                <a class="btn btn-primary btn-mimi" href="{{ path('uts_content_task') }}">Читать >></a>
+            </p>
+        </div>
+        <div class="col-lg-4">
+            <h2>Где проверять?</h2>
+            <p>
+                На этой странице реализован простенький, но работоспособный поиск отелей.
+                Вы его сделаете лучше и результат ваших трудов найдет здесь своё отражение.
+            </p>
+            <p>
+                <a class="btn btn-primary btn-mimi" href="{{ path('uts_hotel_homepage') }}">Смотреть >></a>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12"></div>
+    </div>
+{% endblock %}

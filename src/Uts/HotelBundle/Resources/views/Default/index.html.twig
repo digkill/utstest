@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block test_active %}class="active"{% endblock %}
+
+{% form_theme searchForm 'UtsHotelBundle:Form:search.html.twig' %}
+
+{% block body %}
+    <div class="jumbotron">
+        <h1>Поиск отелей</h1>
+        {{ form(searchForm) }}
+    </div>
+{% endblock %}

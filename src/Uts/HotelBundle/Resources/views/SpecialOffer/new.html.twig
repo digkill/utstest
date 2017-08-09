@@ -1,0 +1,15 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Добавить специальное предложение</h1>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('specialoffer') }}">
+            Вернуться к списку
+        </a>
+    </li>
+</ul>
+{% endblock %}

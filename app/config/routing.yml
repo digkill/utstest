@@ -1,0 +1,13 @@
+uts_hotel:
+    resource: "@UtsHotelBundle/Resources/config/routing.yml"
+    prefix:   /hotel
+
+uts_info:
+    resource: "@UtsContentBundle/Resources/config/routing.yml"
+    prefix:   /
+
+shtumi_useful:
+    resource: '@ShtumiUsefulBundle/Resources/config/routing.xml'
+
+
+

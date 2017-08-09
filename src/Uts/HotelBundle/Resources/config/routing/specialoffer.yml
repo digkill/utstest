@@ -1,0 +1,30 @@
+specialoffer:
+    path:     /
+    defaults: { _controller: "UtsHotelBundle:SpecialOffer:index" }
+
+specialoffer_show:
+    path:     /{id}/show
+    defaults: { _controller: "UtsHotelBundle:SpecialOffer:show" }
+
+specialoffer_new:
+    path:     /new
+    defaults: { _controller: "UtsHotelBundle:SpecialOffer:new" }
+
+specialoffer_create:
+    path:     /create
+    defaults: { _controller: "UtsHotelBundle:SpecialOffer:create" }
+    requirements: { _method: post }
+
+specialoffer_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UtsHotelBundle:SpecialOffer:edit" }
+
+specialoffer_update:
+    path:     /{id}/update
+    defaults: { _controller: "UtsHotelBundle:SpecialOffer:update" }
+    requirements: { _method: post|put }
+
+specialoffer_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UtsHotelBundle:SpecialOffer:delete" }
+    requirements: { _method: post|delete }
